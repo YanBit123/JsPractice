@@ -1,0 +1,100 @@
+body{
+    line-height: 1.5;
+}
+
+.main{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.main .container{
+    height: 100%;
+    padding:30px;
+    box-sizing: border-box;
+}
+
+.main .aside{
+    border: 3px solid #008c8c;
+    width: 200px;
+    float: left;
+    margin-right: 50px;
+    font-size: 18px;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: 'arial';
+}
+
+.aside .aside-row{
+    margin: 30px 0;
+    text-align: center;
+}
+
+.aside .aside-row input,
+.aside .aside-row select
+{
+    font-size: 20px;
+    border: 2px dashed #000;
+}
+
+.aside .aside-row .title{
+    font-size: 50px;
+    font-family: '华文琥珀';
+    margin: 100px 0;
+}
+
+.aside .aside-row:last-child{
+    margin-top: 100px;
+}
+
+.aside #startBtn{
+    border:2px solid #008c8c;
+    background: #333;
+    color:#fff;
+    padding: 10px 30px;
+    font-size: 22px;
+}
+
+.main .game-panel{
+    border-radius: 10px;
+    padding: 10px;
+    border: 3px solid #008c8c;
+    overflow-y: scroll;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+table{
+    margin: auto;
+}
+
+table tr td{
+    width: 50px;
+    height: 50px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid #06a;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table tr td:not(.open):hover{
+    background:#3df;
+}
+
+table tr .open{
+    background:#333;
+    color:#fff;
+}
+
+.not-allowed{
+    cursor: not-allowed;
+    background: #ccc;
+}
+
+.not-allowed:hover{
+    background: #ccc!important;
+}

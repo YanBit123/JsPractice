@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扫雷</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <!-- 侧边导航栏 -->
+            <aside class="aside">
+                <div class="aside-row">
+                    <div class="title">扫&nbsp;雷</div>
+                </div>
+                <div class="aside-row">
+                    <div>
+                        页面大小:
+                    </div>
+
+                    <div>
+                        <select name="rows" id="colSel">
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10" selected>10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                        ×
+                        <select name="cols" id="rowSel">
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10" selected>10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="aside-row">
+                    <div>
+                        游戏时间:
+                    </div>
+                    <div>
+                        <span id="hour">00</span>
+                        :
+                        <span id="minute">00</span>
+                        :
+                        <span id="second">00</span>
+                    </div>
+                </div>
+                <div class="aside-row">
+                    <div>
+                        总地雷数:
+                    </div>
+                    <div id="mineNums">00</div>
+                </div>
+                <div class="aside-row">
+                    <div>
+                        已标记数:
+                    </div>
+                    <div id="flagNums">
+                        00
+                    </div>
+                </div>
+                <div class="aside-row">
+                    <button id="startBtn">游戏开始</button>
+                </div>
+            </aside>
+            <!-- 游戏面板 -->
+            <div class="game-panel">
+                <table id="gameTable">
+                    <tr>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                    </tr>
+                    <tr>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                    </tr>
+                    <tr>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                    </tr>
+                    <tr>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                    </tr>
+                    <tr>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                    </tr>
+                    <tr>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                    </tr>
+                    <tr>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                    </tr>
+                    <tr>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                    </tr>
+                    <tr>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                    </tr>
+                    <tr>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                        <td class="not-allowed"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
